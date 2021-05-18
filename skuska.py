@@ -1,0 +1,2 @@
+text = "adam"
+print(text)
