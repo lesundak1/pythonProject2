@@ -35,33 +35,31 @@ other freshwater genera and herring similar to those
 in modern oceans. Other fish such as paddlefish, 
 garpike and stingray are also present.'''
 ]
-delic='-'*40
+delic='-'*62
 
-username = input('Uživatelské jméno: ')
-password = input('Heslo: ')
+username = input('username: ')
+password = input('password: ')
 
-print('-'*20)
+print(delic)
 if data.get(username) == password:
-    print('Nazdar ' + username)
+    print('Hello ' + username + ', welcome to the app.')
 
 else:
-    print('Heslo, nebo uživatelské jméno je špatně!')
+    print('Password or username is not correct! The app quits.')
     exit()
 print(delic)
-print('mame pre teba 3 texty na analyzu')
+print('We have 3 texts to be analyzed.')
 
-print('-'*20)
-
-nt=input('Choose between texts 1, 2 or 3 : ')
+nt=input('Choose between the tree texts, enter a number btw. 1 and 3 : ')
 if nt.isnumeric():
     if int(nt) < 1 or int(nt) > 3:
-        print("Vami vybrane cislo neni v nabidce, ukoncuji")
+        print("Chosen number is out of range. The app quits.")
         exit()
     else:
         index = int(nt) - 1
         text = TEXTS[index]
 else:
-    print('Nezadali ste cislo,konec!')
+    print('Chosen number is not a number. The app quits.')
     exit()
 
 # print(f"Chosen text: {text}")
@@ -69,7 +67,7 @@ print(delic)
 
 slova=text.split(" ")
 
-print(f"Pocet slov v textu {nt} je {len(slova)} .")
+print(f"Therea are {len(slova)} words in the selected text.")
 
 vycistena_slova = [slovo.strip(".,?,'\n' ") for slovo in slova]
 # print(slova)
@@ -93,14 +91,13 @@ for v in vycistena_slova:
         l=1+l
     delkaslov[len(v)]=delkaslov.get(len(v),0)+1
 # print(delkaslov)
-
 # print(sorted(delkaslov.items()))
 
-print(f" Pocetu upper slov {i}")
-print(f"Starts with upper {j}")
-print(f"is lower {k}")
-print(f"is numeric {l}")
-print(f"is suma {n}")
+print(f"There are {i} uppercase words.")
+print(f"There are {j} titlecase words.")
+print(f"There are {k} lowercase words.")
+print(f"iThere are {l} numeric strings.")
+print(f"The sum of all the numbers is {n}.")
 velkadelka=max(delkaslov.values())
 print(delic)
 print("LEN|"+ " "*math.floor(velkadelka/2-5)+"OCCURENCES" + " "*math.ceil(velkadelka/2-5) + "|NR.")
@@ -112,4 +109,4 @@ for p, r in sorted(delkaslov.items()):
         print("", p , "|"+"*"*r+ " "*(velkadelka-r) +"|",r )
     else:
         print(p, "|" + "*" * r + " " * (velkadelka - r) + "|", r)
-
+print(delic)
