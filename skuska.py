@@ -113,9 +113,3 @@ for p, r in sorted(delkaslov.items()):
     else:
         print(p, "|" + "*" * r + " " * (velkadelka - r) + "|", r)
 
-
-
-print(velkadelka/2-10)
-
-
-
