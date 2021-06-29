@@ -67,9 +67,8 @@ print(delic)
 
 slova=text.split(" ")
 
-print(f"Therea are {len(slova)} words in the selected text.")
-
-vycistena_slova = [slovo.strip(".,?,'\n' ") for slovo in slova]
+vycistena_slova = [slovo.strip(",.?!'\n'' ' ") for slovo in slova if slovo.strip(",.?!'\n'' ' ") != '']
+print(f"Therea are {len(vycistena_slova)} words in the selected text.")
 # print(slova)
 # print(vycistena_slova)
 i=0
