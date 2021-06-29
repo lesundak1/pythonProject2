@@ -67,7 +67,7 @@ print(delic)
 
 slova=text.split(" ")
 
-vycistena_slova = [slovo.strip(",.?!'\n'' ' ") for slovo in slova if slovo.strip(",.?!'\n'' ' ") != '']
+vycistena_slova = [slovo.strip(",.?!'\n'") for slovo in slova if slovo.strip(",.?!'\n'") != '']
 print(f"Therea are {len(vycistena_slova)} words in the selected text.")
 # print(slova)
 # print(vycistena_slova)
